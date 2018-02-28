@@ -12,12 +12,14 @@
 */
 
 Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+	
 	Route::get('/products', 'ProductController@index')->name('products');
 	
-	//Route::delete('/cart/{product_id}', 'CartController@delete')->name('cart.delete');
-	//Route::post('/cart', 'CartController@add')->name('cart.add');
-	Route::get('/cart/delete/{product_id}', 'CartController@delete')->name('cart.delete');
-	Route::get('/cart/{product_id}/{quantity}', 'CartController@add')->name('cart.add');
+	Route::delete('/cart/{product_id}', 'CartController@delete')->name('cart.delete');
+	Route::post('/cart', 'CartController@add')->name('cart.add');
+	
+	Route::get('/cart/{product_id}/delete', 'CartController@delete')->name('cart.getDelete');
+	Route::get('/cart/{product_id}/{quantity}', 'CartController@add')->name('cart.getAdd');
 	
 	
 	Route::get('/cart', 'CartController@index')->name('cart');

@@ -43,9 +43,9 @@ class Handler extends ExceptionHandler
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
-    {
+    {  
     	if ($exception instanceof CartException) {
-    		//$exception
+    		return $exception->render($request, $exception);
     	}
     	
     	$error = $this->convertExceptionToResponse($exception);
