@@ -44,6 +44,17 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+    	if ($exception instanceof CartException) {
+    		//$exception
+    	}
+    	
+    	$error = $this->convertExceptionToResponse($exception);
+    	$response = [];
+    	if($error->getStatusCode() == 404) {
+    		$response = array('error'=>array("type"=>"invalid_request_error", "message"=>"Unable to resolve the request \"api\/info\"."));
+    	}
+    	return response()->json($response, $error->getStatusCode());
+    	
         return parent::render($request, $exception);
     }
 
