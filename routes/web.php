@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['prefix' => 'api', 'namespace' => 'Api'], function () {
+Route::group(['prefix' => 'api', 'namespace' => 'Api', 'middleware'=>'api'], function () {
 	
 	Route::get('/products', 'ProductController@index')->name('products');
 	
