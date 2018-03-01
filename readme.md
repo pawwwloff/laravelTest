@@ -11,7 +11,5 @@
 Копируем файл .env.example и сохраняем с именем .env, после чего в нем устанавливаем параметры подключения к базе.
 
 После этого запускаем миграции и сиды:<br>
-<code>
-php artisan migrate<br>
-php artisan db:seed
-</code>
+<code>php artisan migrate</code><br>
+<code>php artisan db:seed</code><br>
