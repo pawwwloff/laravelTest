@@ -21,7 +21,6 @@ Route::group(['prefix' => 'api', 'namespace' => 'Api', 'middleware'=>'api'], fun
 	Route::get('/cart/{product_id}/delete', 'CartController@delete')->name('cart.getDelete');
 	Route::get('/cart/{product_id}/{quantity}', 'CartController@add')->name('cart.getAdd');
 	
-	
 	Route::get('/cart', 'CartController@index')->name('cart');
 });
 
