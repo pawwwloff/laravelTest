@@ -13,3 +13,5 @@
 После этого запускаем миграции и сиды:<br>
 <code>php artisan migrate</code><br>
 <code>php artisan db:seed</code><br>
+
+Корень сервера (server_path), должен смотреть в public
